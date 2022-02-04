@@ -1,4 +1,4 @@
-targetScope = 'subscription'
+targetScope = 'managementGroup'
 
 resource policy 'Microsoft.Authorization/policyDefinitions@2021-06-01' = {
   name: 'Max VNET address spaces allowed'
