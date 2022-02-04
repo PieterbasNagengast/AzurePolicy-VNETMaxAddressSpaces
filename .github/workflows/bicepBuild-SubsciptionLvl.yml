@@ -45,8 +45,8 @@ jobs:
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
           outputFilePath: ./VNETMaxAddressSpaces-MgmtGrp.json
 
-  ManagementGrp:
-    name: Bicep Build Management group level
+  Commit:
+    name: Commit changes to Repo
     needs: [Subscription, ManagementGrp]
     runs-on: ubuntu-latest
 
