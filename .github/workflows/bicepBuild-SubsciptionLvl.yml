@@ -1,0 +1,24 @@
+name: bicepBuild-SubsciptionLvl
+
+on:
+  push:
+    paths:
+      - VNETMaxAddressSpaces.bicep
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: bicep-build-output
+        uses: Azure/bicep-build-action@v1.0.0
+        with:
+          # Bicep main file path
+          bicepFilePath: ./VNETMaxAddressSpaces.bicep
+          # ARM template output path
+          outputFilePath: ./VNETMaxAddressSpaces-Sub.bicep
