@@ -8,20 +8,48 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  Subscription:
+    name: Bicep Build Subscription level
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      - name: Update-bicep-file-targetscope
+        run: |
+          var="targetScope = 'subscription'"
+          sed -i "1s/.*/$var/" VNETMaxAddressSpaces.bicep
+
       - name: bicep-build-output
         uses: Azure/bicep-build-action@v1.0.0
         with:
-          # Bicep main file path
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
-          # ARM template output path
           outputFilePath: ./VNETMaxAddressSpaces-Sub.json
+
+      - name: Commit 
+        run: |
+          git config --global user.name 'PieterbasNagengast'
+          git add VNETMaxAddressSpaces-Sub.json
+          git commit -am "Auto commit by Github Action"
+          git push
+
+  ManagementGrp:
+    name: Bicep Build Management group level
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Update-bicep-file-targetscope
+        run: |
+          var="targetScope = 'managementGroup'"
+          sed -i "1s/.*/$var/" VNETMaxAddressSpaces.bicep
+
+      - name: bicep-build-output
+        uses: Azure/bicep-build-action@v1.0.0
+        with:
+          bicepFilePath: ./VNETMaxAddressSpaces.bicep
+          outputFilePath: ./VNETMaxAddressSpaces-MgmtGrp.json
 
       - name: Commit 
         run: |
