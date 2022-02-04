@@ -26,5 +26,6 @@ jobs:
       - name: Commit 
         run: |
           git config --global user.name 'PieterbasNagengast'
+          git add VNETMaxAddressSpaces-Sub.json
           git commit -am "Auto commit by Github Action"
           git push
