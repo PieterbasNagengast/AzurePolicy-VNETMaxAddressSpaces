@@ -26,15 +26,9 @@ jobs:
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
           outputFilePath: ./VNETMaxAddressSpaces-Sub.json
 
-      - name: Commit 
-        run: |
-          git config --global user.name 'PieterbasNagengast'
-          git add VNETMaxAddressSpaces-Sub.json
-          git commit -am "Auto commit by Github Action"
-          git push
-
   ManagementGrp:
     name: Bicep Build Management group level
+    needs: Subscription
     runs-on: ubuntu-latest
 
     steps:
@@ -51,9 +45,16 @@ jobs:
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
           outputFilePath: ./VNETMaxAddressSpaces-MgmtGrp.json
 
+  ManagementGrp:
+    name: Bicep Build Management group level
+    needs: [Subscription, ManagementGrp]
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Commit 
         run: |
           git config --global user.name 'PieterbasNagengast'
+          git add VNETMaxAddressSpaces-MgmtGrp.json
           git add VNETMaxAddressSpaces-Sub.json
           git commit -am "Auto commit by Github Action"
           git push
