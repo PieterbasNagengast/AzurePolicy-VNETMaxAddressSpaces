@@ -21,4 +21,10 @@ jobs:
           # Bicep main file path
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
           # ARM template output path
-          outputFilePath: ./VNETMaxAddressSpaces-Sub.bicep
+          outputFilePath: ./VNETMaxAddressSpaces-Sub.json
+
+      - name: Commit 
+        run: |
+          git config --global user.name 'PieterbasNagengast'
+          git commit -am "Auto commit by Github Action"
+          git push
