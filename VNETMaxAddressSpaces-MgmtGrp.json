@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.4.1124.51302",
+      "templateHash": "12595852696946393175"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Authorization/policyDefinitions",
+      "apiVersion": "2021-06-01",
+      "name": "Max VNET address spaces allowed",
+      "properties": {
+        "policyType": "Custom",
+        "description": "Maximum amount of address spaces allowed on VNET's",
+        "displayName": "Max VNET address spaces allowed",
+        "mode": "All",
+        "metadata": {
+          "Category": "Network"
+        },
+        "parameters": {
+          "MaxAddressSpaces": {
+            "type": "Integer",
+            "defaultValue": 1,
+            "metadata": {
+              "description": "Maximum amount of Address Spaces allowed on VNET's",
+              "displayName": "Max. VNET Address Spaces"
+            }
+          },
+          "effect": {
+            "type": "String",
+            "metadata": {
+              "displayName": "Effect",
+              "description": "Enable or disable the execution of the policy."
+            },
+            "allowedValues": [
+              "audit",
+              "deny",
+              "disabled"
+            ],
+            "defaultValue": "deny"
+          }
+        },
+        "policyRule": {
+          "if": {
+            "allOf": [
+              {
+                "field": "type",
+                "equals": "Microsoft.Network/virtualNetworks"
+              },
+              {
+                "count": {
+                  "field": "Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]"
+                },
+                "greater": "[[parameters('MaxAddressSpaces')]"
+              }
+            ]
+          },
+          "then": {
+            "effect": "[[parameters('effect')]"
+          }
+        }
+      }
+    }
+  ]
+}
