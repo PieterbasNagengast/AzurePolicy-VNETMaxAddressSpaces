@@ -1,3 +1,5 @@
+[![bicepBuild-SubsciptionLvl](https://github.com/PieterbasNagengast/AzurePolicy-VNETMaxAddressSpaces/actions/workflows/bicepBuild-SubsciptionLvl.yml/badge.svg)](https://github.com/PieterbasNagengast/AzurePolicy-VNETMaxAddressSpaces/actions/workflows/bicepBuild-SubsciptionLvl.yml)
+
 # Azure Policy: Max VNET address spaces allowed
 
 ## Description
