@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  Subscription:
-    name: Bicep Build Subscription level
+  BicepBuild:
+    name: Bicep Build
     runs-on: ubuntu-latest
 
     steps:
@@ -26,14 +26,6 @@ jobs:
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
           outputFilePath: ./VNETMaxAddressSpaces-Sub.json
 
-  ManagementGrp:
-    name: Bicep Build Management group level
-    needs: Subscription
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-
       - name: Update-bicep-file-targetscope
         run: |
           var="targetScope = 'managementGroup'"
@@ -45,12 +37,6 @@ jobs:
           bicepFilePath: ./VNETMaxAddressSpaces.bicep
           outputFilePath: ./VNETMaxAddressSpaces-MgmtGrp.json
 
-  Commit:
-    name: Commit changes to Repo
-    needs: [Subscription, ManagementGrp]
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Commit 
         run: |
           git config --global user.name 'PieterbasNagengast'
