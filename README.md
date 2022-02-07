@@ -21,7 +21,7 @@ If this policy is assigned:
 1. Deploy Policy to Management Group or Subscription level.
 2. Assign policy
 
-| Description | Bicep Template |
+| Description | Template |
 |---|---|
-| Deploy to Azure Management Group| [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/PieterbasNagengast/AzurePolicy-VNETMaxAddressSpaces/main/VNETMaxAddressSpaces-MgmtGrp.json)|
-| Deploy to Azure Subscription | [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/PieterbasNagengast/AzurePolicy-VNETMaxAddressSpaces/main/VNETMaxAddressSpaces-Sub.json)|
+| Deploy to Azure Management Group| [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPieterbasNagengast%2FAzurePolicy-VNETMaxAddressSpaces%2Fmain%2FVNETMaxAddressSpaces-MgmtGrp.json)|
+| Deploy to Azure Subscription | [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPieterbasNagengast%2FAzurePolicy-VNETMaxAddressSpaces%2Fmain%2FVNETMaxAddressSpaces-Sub.json)|
