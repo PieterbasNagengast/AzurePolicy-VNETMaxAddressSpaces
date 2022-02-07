@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.4.1124.51302",
-      "templateHash": "12595852696946393175"
+      "templateHash": "953412634813828041"
     }
   },
   "resources": [
@@ -65,5 +65,11 @@
         }
       }
     }
-  ]
+  ],
+  "outputs": {
+    "policyID": {
+      "type": "string",
+      "value": "[extensionResourceId(managementGroup().id, 'Microsoft.Authorization/policyDefinitions', 'Max VNET address spaces allowed')]"
+    }
+  }
 }
