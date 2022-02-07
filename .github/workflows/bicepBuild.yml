@@ -1,4 +1,4 @@
-name: bicepBuild-SubsciptionLvl
+name: bicepBuild
 
 on:
   push:
