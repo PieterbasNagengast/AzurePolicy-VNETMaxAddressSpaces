@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.4.1124.51302",
-      "templateHash": "9339353649040749279"
+      "templateHash": "8276179046757659627"
     }
   },
   "resources": [
@@ -15,7 +15,7 @@
       "name": "Max VNET address spaces allowed",
       "properties": {
         "policyType": "Custom",
-        "description": "Maximum amount of Address Spaces allowed on VNETs",
+        "description": "Maximum amount of Address Spaces allowed per VNET",
         "displayName": "Max VNET Address Spaces allowed",
         "mode": "All",
         "metadata": {
