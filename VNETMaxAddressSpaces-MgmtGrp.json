@@ -20,7 +20,7 @@
         "displayName": "Max VNET Address Spaces allowed",
         "mode": "All",
         "metadata": {
-          "Category": "Network"
+          "category": "Network"
         },
         "parameters": {
           "MaxAddressSpaces": {
