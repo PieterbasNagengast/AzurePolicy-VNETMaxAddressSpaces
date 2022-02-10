@@ -8,7 +8,7 @@ resource policy 'Microsoft.Authorization/policyDefinitions@2021-06-01' = {
     displayName: 'Max VNET Address Spaces allowed'
     mode: 'All'
     metadata: {
-      'Category': 'Network'
+      'category': 'Network'
     }
     parameters: {
       'MaxAddressSpaces': {
