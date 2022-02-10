@@ -4,10 +4,11 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.1124.51302",
-      "templateHash": "9339353649040749279"
+      "version": "0.4.613.9944",
+      "templateHash": "13181696630304882308"
     }
   },
+  "functions": [],
   "resources": [
     {
       "type": "Microsoft.Authorization/policyDefinitions",
@@ -15,7 +16,7 @@
       "name": "Max VNET address spaces allowed",
       "properties": {
         "policyType": "Custom",
-        "description": "Maximum amount of Address Spaces allowed on VNETs",
+        "description": "Maximum amount of Address Spaces allowed per VNET",
         "displayName": "Max VNET Address Spaces allowed",
         "mode": "All",
         "metadata": {
@@ -69,7 +70,7 @@
   "outputs": {
     "policyID": {
       "type": "string",
-      "value": "[extensionResourceId(managementGroup().id, 'Microsoft.Authorization/policyDefinitions', 'Max VNET address spaces allowed')]"
+      "value": "[format('Microsoft.Authorization/policyDefinitions/{0}', 'Max VNET address spaces allowed')]"
     }
   }
 }

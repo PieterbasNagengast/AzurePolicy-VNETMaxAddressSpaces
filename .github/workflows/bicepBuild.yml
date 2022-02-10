@@ -14,7 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+      
+      - name: bicep-version
+        run: az bicep install --version v0.4.613
+              
       - name: Update-bicep-file-targetscope
         run: |
           var="targetScope = 'subscription'"
