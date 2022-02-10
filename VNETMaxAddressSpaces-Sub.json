@@ -4,10 +4,11 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.4.1124.51302",
-      "templateHash": "260782976344162409"
+      "version": "0.4.613.9944",
+      "templateHash": "2813125055975604868"
     }
   },
+  "functions": [],
   "resources": [
     {
       "type": "Microsoft.Authorization/policyDefinitions",
